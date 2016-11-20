@@ -1,0 +1,6 @@
+<h1>Welcome to Puppy Depot</h1>
+<% @puppies.each do |puppy|%>
+<h3><%=puppy.name%></h3>
+<h5>Gender: <%=puppy.gender%></h5>
+<h6>Birthdate: <%=puppy.birthdate%></h6>
+<% end %>
