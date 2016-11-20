@@ -26,4 +26,19 @@ class PuppiesController < ApplicationController
     @puppy = Puppy.find_by(id: params[:id])
     render 'edit.html.erb'
   end
+
+  def update
+    puppy = Puppy.find_by(id: params[:id])
+    puppy.name = params[:name]
+    puppy.gender = params[:gender]
+    puppy.birthdate = params[:birthdate]
+    puppy.save
+    redirect_to '/puppies'
+  end
+
+  def destroy
+    @puppy = Puppy.find_by(id: params[:id])
+    @puppy.destroy
+    redirect_to '/puppies'
+  end
 end

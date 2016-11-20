@@ -3,3 +3,13 @@
   <h2><%=@puppy.name%></h2>
   <h3>Gender: <%=@puppy.gender%></h3>
   <p>Birthdate: <%=@puppy.birthdate%></p>
+
+<div>
+  <a href="/puppies">Back to puppy list</a>
+</div>
+<div>
+  <a class="btn btn-default" role="button" href=<%="/puppies/#{@puppy.id}/edit"%>> Edit product</a>  
+</div>
+<div class="btn btn-default" role="button">
+  <%= link_to "Destroy this product!", "/puppies/#{@puppy.id}", method: :delete%>
+</div>
